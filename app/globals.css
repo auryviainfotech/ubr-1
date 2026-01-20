@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  @apply bg-navy-900 text-slate-100 antialiased;
+}
+
+.lux-container {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+.glass-panel {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl;
+}
+
+.gold-border {
+  @apply border border-gold-500/60 shadow-gold-glow;
+}
+
+.gold-text {
+  @apply text-gold-400;
+}
+
+.navy-section {
+  @apply bg-navy-800/80;
+}
+
+.white-section {
+  @apply bg-slate-50 text-slate-900;
+}
+
+.section-padding {
+  @apply py-16 sm:py-20 lg:py-24;
+}
+
+.btn-gold-outline {
+  @apply inline-flex items-center justify-center rounded-full border border-gold-500/70 px-6 py-2 text-sm font-medium tracking-wide text-gold-400 transition hover:border-gold-400 hover:text-gold-300 hover:shadow-gold-glow;
+}
+
+.btn-gold-solid {
+  @apply inline-flex items-center justify-center rounded-full bg-gold-500 px-7 py-2.5 text-sm font-semibold tracking-wide text-navy-900 shadow-lg shadow-amber-500/30 transition hover:bg-gold-400;
+}
+
+.section-title {
+  @apply text-xs font-semibold uppercase tracking-[0.3em] text-gold-400;
+}
+
+.section-heading {
+  @apply mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-50;
+}
+
+.section-subtitle {
+  @apply mt-3 max-w-2xl text-sm sm:text-base text-slate-300;
+}
+
+@layer utilities {
+  .hover\:text-gold-300:hover {
+    color: #ffe1a6;
+  }
+}
+
