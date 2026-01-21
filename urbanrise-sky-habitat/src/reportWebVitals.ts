@@ -1,4 +1,11 @@
-import { ReportHandler } from 'web-vitals';
+
+type ReportHandler = (metric: {
+  name: 'CLS' | 'FCP' | 'FID' | 'LCP' | 'TTFB';
+  value: number;
+  delta: number;
+  id: string;
+  entries: any[];
+}) => void;
 
 const reportWebVitals = (onPerfEntry?: ReportHandler) => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
