@@ -29,9 +29,9 @@ export const callLink = `tel:+${phoneE164Digits}`;
 
 export const heroContent = {
   title: "Codename Sky Habitat",
-  subtitle: "Luxury Sky Residences by Urbanrise",
+  subtitle: "Exclusive 3 & 4 BHK Sky Residences by Urbanrise",
   description:
-    "Rise above the city at a landmark sky community with elevated experiences, resort-style amenities, and panoramic views of Hyderabad.",
+    "Experience luxury living in a 10.6-acre landmark community with 5 iconic towers, each rising 42 floors high and offering 200+ world-class amenities. Presenting exclusive 3 & 4 BHK apartments ranging from 1509 to 2339 sft.",
   primaryCta: "Book a Site Visit",
   secondaryCta: "Download Brochure",
   heroImage: balconyHero,
@@ -39,12 +39,12 @@ export const heroContent = {
 };
 
 export const statsHighlights = [
-  { label: "Acres of Elevated Community", value: "8.5+" },
-  { label: "Iconic Towers", value: "3" },
-  { label: "Sky-High Floors", value: "30+" },
-  { label: "Premium Residences", value: "2, 2.5 & 3 BHK" },
-  { label: "Rooftop Experiences", value: "20+" },
-  { label: "Skywalk Length", value: "400+ m" },
+  { label: "Acres of Elevated Community", value: "10.6" },
+  { label: "Towers", value: "5 Iconic" },
+  { label: "Floors per Tower", value: "42" },
+  { label: "Amenities", value: "200+" },
+  { label: "Apartment Types", value: "Exclusive 3 & 4 BHK" },
+  { label: "Area Range (sft)", value: "1509 - 2339" },
 ];
 
 export const signatureExperiences = [

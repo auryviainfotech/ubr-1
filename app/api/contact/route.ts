@@ -25,11 +25,13 @@ export async function POST(req: Request) {
       );
     }
 
-    const SMTP_USER = process.env.SMTP_USER;
-    const SMTP_PASS = process.env.SMTP_PASS;
-    const TO_EMAIL = process.env.TO_EMAIL || "skyhabitatbyurbanrise@gmail.com";
+    const EMAIL_HOST = process.env.EMAIL_HOST;
+    const EMAIL_PORT = process.env.EMAIL_PORT;
+    const EMAIL_USER = process.env.EMAIL_USER;
+    const EMAIL_PASS = process.env.EMAIL_PASS;
+    const EMAIL_TO = process.env.EMAIL_TO || "skyhabitatbyurbanrise@gmail.com";
 
-    if (!SMTP_USER || !SMTP_PASS) {
+    if (!EMAIL_HOST || !EMAIL_PORT || !EMAIL_USER || !EMAIL_PASS) {
       return Response.json(
         { ok: false, error: "Email service not configured (missing env vars)." },
         { status: 500 }
@@ -37,10 +39,12 @@ export async function POST(req: Request) {
     }
 
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: EMAIL_HOST,
+      port: Number(EMAIL_PORT),
+      secure: true,
       auth: {
-        user: SMTP_USER,
-        pass: SMTP_PASS,
+        user: EMAIL_USER,
+        pass: EMAIL_PASS,
       },
     });
 
@@ -55,8 +59,8 @@ export async function POST(req: Request) {
     ].join("\n");
 
     await transporter.sendMail({
-      from: `"Sky Habitat Website" <${SMTP_USER}>`,
-      to: TO_EMAIL,
+      from: `"Sky Habitat Website" <${EMAIL_USER}>`,
+      to: EMAIL_TO,
       subject,
       text,
     });

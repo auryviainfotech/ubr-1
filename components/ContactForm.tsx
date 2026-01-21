@@ -30,6 +30,9 @@ export function ContactForm({
     message: "",
   });
 
+  // Brochure PDF path
+  const brochureUrl = "/photos/Codename Sky Habitat - Main Brochure.pdf";
+
   const canSubmit = useMemo(() => {
     return Boolean(form.name.trim() && form.phone.trim());
   }, [form.name, form.phone]);
@@ -62,6 +65,14 @@ export function ContactForm({
         message: "Thanks! We’ll contact you shortly to book your site visit.",
       });
       setForm({ name: "", phone: "", email: "", message: "" });
+
+      // Trigger brochure download
+      const link = document.createElement("a");
+      link.href = brochureUrl;
+      link.download = "Codename Sky Habitat - Main Brochure.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     } catch (err) {
       setState({
         status: "error",
