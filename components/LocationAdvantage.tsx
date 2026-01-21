@@ -12,8 +12,9 @@ export function LocationAdvantage({
     ? locationAdvantage.points
     : locationAdvantage.points.slice(0, 4);
 
+  // Custom background color for Location Advantage section
   return (
-    <section className={`section-padding ${showAll ? "white-section" : "navy-section"}`}>
+    <section className={`section-padding`} style={{ background: showAll ? '#f5f7fa' : '#1a2233' }}>
       <div className="lux-container grid gap-10 lg:grid-cols-[1.2fr,1fr] lg:items-start">
         <div className="space-y-4">
           <p className={`section-title ${showAll ? "text-gold-500" : ""}`}>
